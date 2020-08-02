@@ -16,12 +16,18 @@ def check_market(marketId):
     if result == 1:
         return "Buy No"
 
-@app.route('/markets/check/all')
+@app.route('/market/check/all')
 def check_all_markets():
     print("Checking all markets")
     scraper = Scraper()
     yes, no, either = scraper.check_all_markets()
     return {"Buy Yes": yes, "Buy No": no}
+
+@app.route('/market/buy/<type>')
+def buy_market(type):
+    print(type)
+    print("Not Implemented Yet")
+    return
 
 if __name__ == "__main__":
     app.run()
